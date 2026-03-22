@@ -3,6 +3,8 @@ import time
 from langchain_cohere import ChatCohere
 from langchain_core.prompts import ChatPromptTemplate
 
+from dotenv import load_dotenv
+load_dotenv()
 LLM_API_KEY = os.getenv("COHERE_API_KEY")
 LLM_MODEL = "command-a-03-2025"
 

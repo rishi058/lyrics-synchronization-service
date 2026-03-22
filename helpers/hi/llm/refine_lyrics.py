@@ -41,7 +41,7 @@ class RefinedLyrics(BaseModel):
     words: list[RefinedWord] = Field(description="List of normalized words preserving exact order.")
 
 
-class RefineHinglish(BaseLLM):
+class RefineHinglishSong(BaseLLM):
     def __init__(self):
         super().__init__()
 
