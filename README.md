@@ -7,6 +7,7 @@ A multilingual lyrics-to-audio alignment system supporting **English** and **Hin
 ## Table of Contents
 
 - [Example](#example)
+- [How to Run](#how-to-run)
 - [Architecture](#architecture)
 - [Processing Pipelines](#processing-pipelines)
   - [Case 1: English Songs](#case-1-english-songs)
@@ -67,6 +68,24 @@ JSON OUTPUT:
     },
 ]
 ```
+
+---
+
+## How to Run
+
+```bash
+winget install Python.Python.3.11
+
+git clone git@github.com:rishi058/lyrics-synchronization-service.git
+cd lyrics-synchronization-service
+py -3.11 -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
+(.venv) python main.py
+http://localhost:5001/health
+```
+
 
 ---
 
