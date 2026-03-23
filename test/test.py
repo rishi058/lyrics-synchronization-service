@@ -13,8 +13,8 @@ if __name__ == "__main__":
         "language": "hi",
         "lyrics": lyrics,
         "force_alignment": True,
-        "devanagari_output": True,
-        "isolate_vocals": True
+        "devanagari_output": False,
+        "isolate_vocals": True 
     }
 
     print("Sending request to the server...")

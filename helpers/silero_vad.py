@@ -1,7 +1,7 @@
 import torch 
 import time
 import gc 
-from config import DEVICE, SAMPLE_RATE
+from helpers.config import DEVICE, SAMPLE_RATE
 
 # Minimum VAD segment duration (seconds) to be considered real speech.
 # Filters out short instrument transients / false positives.
