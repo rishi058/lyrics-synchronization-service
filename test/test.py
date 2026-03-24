@@ -4,15 +4,15 @@ url = "http://localhost:5001/sync-lyrics"
 
 if __name__ == "__main__":
 
-    with open("lyrics.txt", "r", encoding="utf-8") as f:
+    with open("lyrics_text/lyrics.txt", "r", encoding="utf-8") as f:
         lyrics = f.read()
 
     body = {
-        "media_path": "C:\\Users\\Rishi\\Downloads\\Afusic_-_Not_Enough.mp4",
-        "output_path": "D:\\STUDY 2\\MediaEditor\\01\\test\\",
-        "language": "hi",
-        "lyrics": lyrics,
-        "force_alignment": True,
+        "media_path": "C:\\Users\\Rishi\\Downloads\\Die_For_You.mp4",
+        "output_path": "D:\\STUDY 2\\MediaEditor\\01\\test\\lyrics_json\\",
+        "language": "en",
+        "lyrics": "",
+        "force_alignment": False,
         "devanagari_output": False,
         "isolate_vocals": True 
     }

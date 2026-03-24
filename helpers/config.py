@@ -18,8 +18,8 @@ import torch
 # | large-v3-turbo   | 1.5 GB | ~4.7 GB  |
 
 # ── Device & Model ────────────────────────────────────────────────────────────
-DEVICE       = "cuda" if (torch.cuda.is_available() and torch.cuda.device_count() > 0) else "cpu"
-COMPUTE_TYPE = "float16" # use int8 if you have a compatible GPU and want to save more memory (may reduce quality)
+DEVICE       = "cpu" # "cuda" if (torch.cuda.is_available() and torch.cuda.device_count() > 0) else "cpu"
+COMPUTE_TYPE = "int8" # "float16" # use int8 if you want to save more memory (may reduce quality)
 MODEL_NAME   = "large-v3-turbo" if DEVICE == "cuda" else "medium"
 
 # ── Regex Patterns ────────────────────────────────────────────────────────────

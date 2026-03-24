@@ -16,7 +16,7 @@ from helpers.config import COMPUTE_TYPE, DEVICE, MODEL_NAME, ALIGN_MODEL_HI, SAM
 from helpers.hi.transliteration import is_devanagari
 from helpers.utils import clean_for_alignment
 from helpers.hi.process_helper import process_devanagari_script, process_latin_script
-from helpers.silero_vad import _detect_vocal_bounds
+from helpers.silero_vad import detect_vocal_bounds
 
 def process_hindi_language(lyrics: str, devanagari_output: bool, audio) -> list[dict]:
     """Returns sync data for Hindi/Hinglish language."""
@@ -49,7 +49,7 @@ def process_hindi_language(lyrics: str, devanagari_output: bool, audio) -> list[
         raise RuntimeError("No words found in lyrics after processing.")
 
     # ── Step 2: Detect vocal bounds in a SINGLE VAD pass ────────────────────
-    vocal_start, vocal_end = _detect_vocal_bounds(audio, audio_duration)
+    vocal_start, vocal_end = detect_vocal_bounds(audio, audio_duration)
 
     aligned_segments = [{"text": align_text, "start": vocal_start, "end": vocal_end}]
 
