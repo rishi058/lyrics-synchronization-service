@@ -1,50 +1,22 @@
-# winget install ffmpeg 
+# ── Base / Shared Dependencies ──────────────────────────
+# Installed once in d:\STUDY 2\test\.venv
+# Child venvs inherit these via --system-site-packages
 
-# winget install Python.Python.3.11
-
-# py -3.11 -m pip install --user pipx
-# py -3.11 -m pipx ensurepath
-
-# py -3.11 -m pipx install deepfilternet
-# C:\Users\<user-name>\pipx\venvs\deepfilternet\Scripts\python.exe -m pip install  torch==2.8.0 torchaudio==2.8.0  soundfile PySoundFile
-
-# curl https://sh.rustup.rs -sSf | sh
-# rustc --version
-# cargo --version
-
-# py -3.11 -m venv .venv
-# .venv\Scripts\activate
-# pip install -r requirements.txt
-
-# When using CUDA, total .venv size: 8GB
---extra-index-url https://download.pytorch.org/whl/cu128
-torch==2.8.0+cu128        # match whisperx 3.8.4 requirement
-torchvision==0.23.0+cu128 # must match torch version
-torchaudio==2.8.0+cu128   # must match torch version
-whisperx==3.8.4
-pytorch-lightning==2.6.1
-pyannote.audio
-setuptools>=75.0
-
-# When using CPU only, total .venv size: 2.5GB
-# whisperx
-
-huggingface_hub[hf_xet]<1.0.0
-numpy>=2.1.0,<3.0.0
-
-indic_transliteration
-wordfreq
+# Web framework
 fastapi
 uvicorn
+requests
 python-dotenv
-demucs
-langchain_cohere
-langchain_core
 
-# deepfilternet is excluded due to numpy version conflict:
-# whisperx requires numpy>=2.1.0, deepfilternet requires numpy<2.0
-pyloudnorm
+# PyTorch (CUDA 12.8)
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.8.0+cu128
+torchvision==0.23.0+cu128
+torchaudio==2.8.0+cu128
+
+huggingface_hub[hf_xet]
+
+# Audio / Science
+numpy
 librosa
-praat-parselmouth
-# pyrubberband requires system package: i've imported windows bin in the project itself
-pyrubberband
+soundfile

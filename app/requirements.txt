@@ -1,0 +1,12 @@
+# App pipeline — module-specific deps only
+# (torch, fastapi, numpy, librosa, soundfile, etc. inherited from base venv)
+indic_transliteration
+wordfreq
+demucs
+langchain_cohere
+langchain_core 
+google-genai 
+
+#used in seperation pipeline
+audio-separator==0.44.1
+onnxruntime-gpu==1.24.4

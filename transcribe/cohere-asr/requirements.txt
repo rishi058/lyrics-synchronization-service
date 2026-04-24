@@ -1,0 +1,6 @@
+# Cohere ASR — module-specific deps only
+# (torch, fastapi, numpy, etc. inherited from base venv)
+transformers>=5.4.0
+accelerate
+sentencepiece
+protobuf

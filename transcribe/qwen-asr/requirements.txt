@@ -1,0 +1,3 @@
+# Qwen ASR — module-specific deps only
+# (torch, fastapi, numpy, etc. inherited from base venv)
+qwen-asr
