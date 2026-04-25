@@ -1,0 +1,68 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🚀 App (port 5000)",
+            "type": "shell",
+            "command": "${workspaceFolder}\\app\\.venv\\Scripts\\python.exe",
+            "args": ["${workspaceFolder}\\app\\main.py"],
+            "options": {
+                "cwd": "${workspaceFolder}\\app"
+            },
+           "presentation": {
+                "panel": "new"
+            }
+        },
+        {
+            "label": "🎤 Cohere ASR (port 5001)",
+            "type": "shell",
+            "command": "${workspaceFolder}\\transcribe\\cohere-asr\\.venv\\Scripts\\python.exe",
+            "args": ["${workspaceFolder}\\transcribe\\cohere-asr\\main.py"],
+            "options": {
+                "cwd": "${workspaceFolder}\\transcribe\\cohere-asr"
+            },
+           "presentation": {
+                "panel": "new"
+            }
+        },
+        {
+            "label": "🎤 Qwen ASR (port 5002)",
+            "type": "shell",
+            "command": "${workspaceFolder}\\transcribe\\qwen-asr\\.venv\\Scripts\\python.exe",
+            "args": ["${workspaceFolder}\\transcribe\\qwen-asr\\main.py"],
+            "options": {
+                "cwd": "${workspaceFolder}\\transcribe\\qwen-asr"
+            },
+           "presentation": {
+                "panel": "new"
+            }
+        },
+        {
+            "label": "🎤 WhisperX (port 5003)",
+            "type": "shell",
+            "command": "${workspaceFolder}\\transcribe\\whisperx\\.venv\\Scripts\\python.exe",
+            "args": ["${workspaceFolder}\\transcribe\\whisperx\\main.py"],
+            "options": {
+                "cwd": "${workspaceFolder}\\transcribe\\whisperx"
+            },
+           "presentation": {
+                "panel": "new"
+            }
+        },
+        {
+            "label": "⚡ Start All Services",
+            "dependsOn": [
+                "🚀 App (port 5000)",
+                "🎤 Cohere ASR (port 5001)",
+                "🎤 Qwen ASR (port 5002)",
+                "🎤 WhisperX (port 5003)",
+            ],
+            "dependsOrder": "parallel",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
